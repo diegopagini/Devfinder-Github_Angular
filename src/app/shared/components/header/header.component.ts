@@ -7,14 +7,14 @@ import { StoreService } from 'src/app/core/services/store.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  mode: 'dark' | 'light' = 'light';
+  mode: 'dark_mode' | 'wb_sunny' = 'wb_sunny';
   switch = false;
 
   constructor(private storeService: StoreService) {}
 
   changeMode(): void {
     this.switch = !this.switch;
-    this.switch ? (this.mode = 'dark') : (this.mode = 'light');
+    this.switch ? (this.mode = 'dark_mode') : (this.mode = 'wb_sunny');
 
     this.storeService.dispatchChangeTheme(this.switch);
   }

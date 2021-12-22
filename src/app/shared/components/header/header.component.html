@@ -1,6 +1,8 @@
 <mat-toolbar>
   <h1>DevFinder</h1>
-  <mat-slide-toggle color="primary" (click)="changeMode()">{{
-    mode
-  }}</mat-slide-toggle>
+  <div class="toggle">
+    <mat-slide-toggle color="primary" (click)="changeMode()">
+    </mat-slide-toggle>
+    <mat-icon>{{ mode }}</mat-icon>
+  </div>
 </mat-toolbar>

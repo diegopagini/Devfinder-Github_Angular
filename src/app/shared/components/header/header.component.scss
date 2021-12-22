@@ -1,21 +1,24 @@
 @import "../../../../assets/styles/base";
+@import "../../../../assets/styles/mixins";
 
 :host {
   mat-toolbar {
     align-items: center;
-    background-color: rgba(transparent, 0.1);
+    background-color: rgba(transparent, 0.05);
     color: $white;
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
 
-    h1,
-    mat-slide-toggle {
+    h1 {
       font-family: $font-family;
-      color: $white;
+    }
 
-      &::ng-deep .mat-slide-toggle-content {
-        font-family: $font-family;
+    .toggle {
+      @include center;
+
+      mat-icon {
+        padding: 0 0.5rem;
       }
     }
   }
