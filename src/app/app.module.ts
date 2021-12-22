@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpApiInterceptor } from './core/interceptors/http.interceptor';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
 import { UiEffects } from './core/store/effects/ui.effects';
+import { uiReducer } from './core/store/reducers/ui.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,7 @@ import { UiEffects } from './core/store/effects/ui.effects';
     // components
     SharedComponentsModule,
     // ngrx
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ ui: uiReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
