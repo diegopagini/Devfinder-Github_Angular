@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { StoreService } from 'src/app/core/services/store.service';
 
 @Component({
   selector: 'app-header',
@@ -10,15 +10,12 @@ export class HeaderComponent {
   mode: 'dark' | 'light' = 'light';
   switch = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(private storeService: StoreService) {}
 
   changeMode(): void {
     this.switch = !this.switch;
-
     this.switch ? (this.mode = 'dark') : (this.mode = 'light');
 
-    this.switch
-      ? this.document.body.setAttribute('color-theme', 'light')
-      : this.document.body.setAttribute('color-theme', 'dark');
+    this.storeService.dispatchChangeTheme(this.switch);
   }
 }

@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpApiInterceptor } from './core/interceptors/http.interceptor';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
+import { UiEffects } from './core/store/effects/ui.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,7 @@ import { SharedComponentsModule } from './shared/components/shared-components.mo
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([UiEffects]),
   ],
   providers: [
     {
