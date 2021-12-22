@@ -9,7 +9,6 @@
 
 # dependencies
 /node_modules
-/vscode
 
 # profiling files
 chrome-profiler-events*.json
@@ -21,7 +20,6 @@ chrome-profiler-events*.json
 .c9/
 *.launch
 .settings/
-.vscode
 *.sublime-workspace
 
 # IDE - VSCode
