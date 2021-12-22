@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { getSearch } from '../store/actions/app.action';
 import { changeTheme } from '../store/actions/ui.actions';
 
 @Injectable({
@@ -10,5 +11,9 @@ export class StoreService {
 
   dispatchChangeTheme(payload: boolean): void {
     this.store.dispatch(changeTheme({ payload }));
+  }
+
+  dispatchGetSearch(search: string): void {
+    this.store.dispatch(getSearch({ payload: search }));
   }
 }

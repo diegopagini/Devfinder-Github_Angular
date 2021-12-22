@@ -1,0 +1,42 @@
+@import "../../../../../assets/styles/base";
+
+:host {
+  mat-toolbar {
+    background-color: rgba(transparent, 0.1);
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+
+    input {
+      border: unset;
+      background-color: transparent;
+      height: 100%;
+      text-align: center;
+      width: 100%;
+
+      &:focus {
+        outline: unset;
+      }
+
+      &::placeholder {
+        font-family: $font-family;
+        letter-spacing: 3px;
+      }
+    }
+
+    ::ng-deep {
+      .mat-button-wrapper {
+        color: $black;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .mat-raised-button {
+        min-width: unset;
+        padding: 0 0.5rem;
+        width: max-content;
+      }
+    }
+  }
+}

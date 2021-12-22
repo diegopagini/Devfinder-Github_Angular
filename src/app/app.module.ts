@@ -13,6 +13,7 @@ import { HttpApiInterceptor } from './core/interceptors/http.interceptor';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
 import { UiEffects } from './core/store/effects/ui.effects';
 import { uiReducer } from './core/store/reducers/ui.reducer';
+import { AppEffects } from './core/store/effects/app.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,7 @@ import { uiReducer } from './core/store/reducers/ui.reducer';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([UiEffects]),
+    EffectsModule.forRoot([UiEffects, AppEffects]),
   ],
   providers: [
     {
