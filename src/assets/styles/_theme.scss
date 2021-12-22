@@ -1,0 +1,10 @@
+@import "./base";
+
+body[color-theme="dark"] {
+  background-color: $dark-background;
+  color: $white;
+}
+
+body[color-theme="light"] {
+  background-color: $light-background;
+}
