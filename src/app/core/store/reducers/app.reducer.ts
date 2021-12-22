@@ -9,7 +9,7 @@ import {
 
 const initialState: AppInitialState = {
   loading: false,
-  user: {},
+  user: null,
 };
 
 export const appReducer = createReducer(

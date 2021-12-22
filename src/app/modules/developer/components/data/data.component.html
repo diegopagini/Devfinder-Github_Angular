@@ -1,0 +1,21 @@
+<ng-container *ngIf="developerData$ | async as dev">
+  <mat-card class="dev">
+    <mat-card-header>
+      <img class="dev-img" [src]="dev.avatar_url" [alt]="dev.name" />
+
+      <div class="dev-title">
+        <mat-card-title>{{ dev.name }}</mat-card-title>
+        <mat-card-subtitle
+          ><a [href]="dev.html_url" target="_blank"
+            >@{{ dev.login }}</a
+          ></mat-card-subtitle
+        >
+        <mat-card-subtitle
+          >Joined {{ dev.created_at | date }}</mat-card-subtitle
+        >
+      </div>
+    </mat-card-header>
+    <mat-card-content></mat-card-content>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+</ng-container>

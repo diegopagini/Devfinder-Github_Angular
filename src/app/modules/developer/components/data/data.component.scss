@@ -1,0 +1,26 @@
+@import "../../../../../assets/styles/base";
+@import "../../../../../assets/styles/mixins";
+
+.dev {
+  background-color: rgba(transparent, 0.1);
+  margin: 2rem 0;
+
+  mat-card-header {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+
+    .dev-img {
+      border-radius: 50%;
+      box-shadow: $border;
+      height: 100px;
+      margin: 0 1rem;
+      width: 100px;
+
+      @media (min-width: 991px) {
+        height: 250px;
+        width: 250px;
+      }
+    }
+  }
+}
