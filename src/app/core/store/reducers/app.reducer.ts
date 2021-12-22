@@ -1,12 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
 import { CustomAction } from '../../models/actions.model';
+import { AppInitialState } from '../../models/app.state.model';
 import {
   getSearch,
   getSearchFail,
   getSearchSuccess,
 } from '../actions/app.action';
 
-const initialState = {
+const initialState: AppInitialState = {
   loading: false,
   user: {},
 };

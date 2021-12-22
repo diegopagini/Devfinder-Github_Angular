@@ -7,7 +7,12 @@
       placeholder="Search GitHub username"
       [(ngModel)]="search"
     />
-    <button mat-raised-button type="button" (click)="getSearch()">
+    <button
+      [disabled]="loading$ | async"
+      mat-raised-button
+      type="button"
+      (click)="getSearch()"
+    >
       Search
     </button>
   </mat-toolbar-row>
