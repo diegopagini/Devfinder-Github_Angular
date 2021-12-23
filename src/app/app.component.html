@@ -2,7 +2,7 @@
   <app-header></app-header>
   <router-outlet></router-outlet>
 
-  <section class="navigation">
+  <section *ngIf="developers$ | async" class="navigation">
     <app-navbar></app-navbar>
   </section>
 </section>

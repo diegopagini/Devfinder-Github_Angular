@@ -1,8 +1,14 @@
 <ng-container *ngIf="developerData$ | async as dev">
   <mat-card class="dev fadeIn">
-    <mat-icon matTooltip="Save Developer Profile" class="save"
-      >bookmark_add</mat-icon
+    <button
+      (click)="addDeveloper(dev)"
+      matTooltip="Save Developer Profile"
+      class="save"
+      mat-icon-button
     >
+      <mat-icon>bookmark_add</mat-icon>
+    </button>
+
     <mat-card-header>
       <img class="dev-img" [src]="dev.avatar_url" [alt]="dev.name" />
       <div class="dev-title">

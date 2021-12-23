@@ -9,5 +9,10 @@ export const userSelector = createSelector(state, (app) => app.user);
 
 export const developersSelector = createSelector(
   state,
-  (app) => app.developers
+  (app) => app?.developers
+);
+
+export const areDevelopersSelector = createSelector(
+  state,
+  (app) => !!app?.developers?.length
 );

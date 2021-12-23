@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getSearch } from '../store/actions/app.action';
+import { User } from '../models/user.model';
+import { addDeveloper, getSearch } from '../store/actions/app.action';
 import { changeTheme } from '../store/actions/ui.actions';
 
 @Injectable({
@@ -15,5 +16,9 @@ export class StoreService {
 
   dispatchGetSearch(search: string): void {
     this.store.dispatch(getSearch({ payload: search }));
+  }
+
+  dispatchAddDeveloper(developer: User): void {
+    this.store.dispatch(addDeveloper({ payload: developer }));
   }
 }

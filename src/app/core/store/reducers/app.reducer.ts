@@ -2,6 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { CustomAction } from '../../models/actions.model';
 import { AppInitialState } from '../../models/app.state.model';
 import {
+  addDeveloper,
   getSearch,
   getSearchFail,
   getSearchSuccess,
@@ -10,7 +11,7 @@ import {
 const initialState: AppInitialState = {
   loading: false,
   user: null,
-  developers: null,
+  developers: [],
 };
 
 export const appReducer = createReducer(
@@ -29,5 +30,10 @@ export const appReducer = createReducer(
   on(getSearchFail, (state, action) => ({
     ...state,
     loading: false,
+  })),
+
+  on(addDeveloper, (state, action) => ({
+    ...state,
+    developers: [...state.developers, action.payload],
   }))
 );

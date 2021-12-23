@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/core/models/user.model';
+import { StoreService } from 'src/app/core/services/store.service';
 import { userSelector } from 'src/app/core/store/selectors/app.selectors';
 
 @Component({
@@ -12,9 +13,13 @@ import { userSelector } from 'src/app/core/store/selectors/app.selectors';
 export class DataComponent implements OnInit {
   developerData$: Observable<User>;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private storeService: StoreService) {}
 
   ngOnInit(): void {
     this.developerData$ = this.store.select(userSelector);
+  }
+
+  addDeveloper(developer: User): void {
+    this.storeService.dispatchAddDeveloper(developer);
   }
 }

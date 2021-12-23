@@ -12,3 +12,8 @@ export const getSearchSuccess = createAction(
 );
 
 export const getSearchFail = createAction('[Effect] Get Search Fail');
+
+export const addDeveloper = createAction(
+  '[Developer Card] Add Developer To List',
+  props<{ payload: User }>()
+);
