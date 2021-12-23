@@ -14,6 +14,7 @@ import { SharedComponentsModule } from './shared/components/shared-components.mo
 import { UiEffects } from './core/store/effects/ui.effects';
 import { uiReducer } from './core/store/reducers/ui.reducer';
 import { AppEffects } from './core/store/effects/app.effects';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,12 @@ import { AppEffects } from './core/store/effects/app.effects';
       logOnly: environment.production,
     }),
     EffectsModule.forRoot([UiEffects, AppEffects]),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     {
