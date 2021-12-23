@@ -4,4 +4,5 @@ export interface AppInitialState {
   loading: boolean;
   user: User | any;
   developers: User[] | any;
+  notFound: boolean;
 }

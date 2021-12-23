@@ -1,3 +1,7 @@
 <app-searchdev></app-searchdev>
 <app-data *ngIf="!(loading$ | async)"></app-data>
 <app-spinner *ngIf="loading$ | async"></app-spinner>
+
+<section *ngIf="notFound$ | async" class="not-found fadeIn">
+  <p>No developers with that name found...</p>
+</section>

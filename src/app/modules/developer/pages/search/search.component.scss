@@ -1,0 +1,6 @@
+@import "../../../../../assets/styles/mixins";
+
+.not-found {
+  height: 70vh;
+  @include center;
+}

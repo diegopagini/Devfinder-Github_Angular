@@ -1,22 +1,28 @@
-.list {
-  background-color: rgba(transparent, 0.1);
-  margin: 2rem 1rem;
+:host {
+  .mat-list-base {
+    padding: 0;
+  }
 
-  .option {
-    align-items: center;
-    display: flex;
-    width: 100%;
+  .list {
+    background-color: rgba(transparent, 0.1);
+    margin: 2rem 1rem;
 
-    img {
-      border-radius: 50%;
-      height: 50px;
-      padding: 0.25rem;
-      width: 50px;
-    }
+    .option {
+      align-items: center;
+      display: flex;
+      width: 100%;
 
-    span,
-    a {
-      padding: 0 1rem;
+      img {
+        border-radius: 50%;
+        height: 50px;
+        padding: 0.25rem;
+        width: 50px;
+      }
+
+      span,
+      a {
+        padding: 0 1rem;
+      }
     }
   }
 }

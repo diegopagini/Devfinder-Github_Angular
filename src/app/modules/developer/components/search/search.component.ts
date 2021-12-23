@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   constructor(private storeService: StoreService, private store: Store) {}
 
   ngOnInit(): void {
+    this.search = '';
     this.loading$ = this.store.select(loadingSelector);
   }
 

@@ -35,3 +35,18 @@
     opacity: 1;
   }
 }
+
+// fadeIn
+.fadeOut {
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
