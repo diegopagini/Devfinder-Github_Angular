@@ -18,3 +18,5 @@ export const areDevelopersSelector = createSelector(
 );
 
 export const notFoundSelector = createSelector(state, (app) => app.notFound);
+
+export const addingSelector = createSelector(state, (app) => app.adding);

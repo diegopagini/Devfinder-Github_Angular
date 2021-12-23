@@ -7,6 +7,8 @@ import { CustomAction } from '../../models/actions.model';
 import { User } from '../../models/user.model';
 import { DevService } from '../../services/dev.service';
 import {
+  addDeveloper,
+  addDeveloperSuccess,
   getSearch,
   getSearchFail,
   getSearchSuccess,
@@ -14,7 +16,7 @@ import {
 
 @Injectable()
 export class AppEffects {
-  changeTheme$ = createEffect(() =>
+  searchDeveloper$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getSearch),
       map((action: CustomAction) => this.devService.getUser(action.payload)),
@@ -31,6 +33,15 @@ export class AppEffects {
           return getSearchFail();
         }
       })
+    )
+  );
+
+  addDeveloper$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(addDeveloper),
+      map((action: CustomAction) => action),
+      delay(500),
+      map((action) => addDeveloperSuccess({ payload: action.payload }))
     )
   );
 

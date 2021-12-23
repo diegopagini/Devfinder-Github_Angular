@@ -17,3 +17,8 @@ export const addDeveloper = createAction(
   '[Developer Card] Add Developer To List',
   props<{ payload: User }>()
 );
+
+export const addDeveloperSuccess = createAction(
+  '[Effect] Add Developer To List',
+  props<{ payload: User }>()
+);

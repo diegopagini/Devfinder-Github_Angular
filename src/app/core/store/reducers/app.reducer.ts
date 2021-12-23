@@ -3,6 +3,7 @@ import { CustomAction } from '../../models/actions.model';
 import { AppInitialState } from '../../models/app.state.model';
 import {
   addDeveloper,
+  addDeveloperSuccess,
   getSearch,
   getSearchFail,
   getSearchSuccess,
@@ -13,6 +14,7 @@ const initialState: AppInitialState = {
   user: null,
   developers: [],
   notFound: false,
+  adding: false,
 };
 
 export const appReducer = createReducer(
@@ -39,8 +41,14 @@ export const appReducer = createReducer(
 
   on(addDeveloper, (state, action) => ({
     ...state,
-    user: null,
     developers: [...state.developers, action.payload],
     notFound: false,
+    adding: true,
+  })),
+
+  on(addDeveloperSuccess, (state, action) => ({
+    ...state,
+    user: null,
+    adding: false,
   }))
 );

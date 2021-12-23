@@ -5,4 +5,5 @@ export interface AppInitialState {
   user: User | any;
   developers: User[] | any;
   notFound: boolean;
+  adding: boolean;
 }
