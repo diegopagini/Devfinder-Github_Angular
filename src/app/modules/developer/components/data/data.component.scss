@@ -3,6 +3,7 @@
 
 .dev {
   background-color: rgba(transparent, 0.1);
+  font-family: $font-family;
   margin: 2rem 0;
 
   mat-card-header {
@@ -20,6 +21,50 @@
       @media (min-width: 991px) {
         height: 250px;
         width: 250px;
+      }
+    }
+  }
+
+  mat-card-content {
+    flex-direction: column;
+    margin: 1rem;
+    @include center;
+
+    .dev-repos {
+      align-items: center;
+      background-color: rgba(transparent, 0.05);
+      display: flex;
+      font-size: 1rem;
+      justify-content: space-evenly;
+      margin: 1rem;
+      width: 100%;
+
+      a {
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.5s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .dev-personal-info {
+      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 1rem;
+      width: 100%;
+
+      div {
+        @include center;
+        padding: 1rem;
+
+        span,
+        a {
+          padding: 0 0.5rem;
+        }
       }
     }
   }

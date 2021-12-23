@@ -2,7 +2,6 @@
   <mat-card class="dev">
     <mat-card-header>
       <img class="dev-img" [src]="dev.avatar_url" [alt]="dev.name" />
-
       <div class="dev-title">
         <mat-card-title>{{ dev.name }}</mat-card-title>
         <mat-card-subtitle
@@ -15,7 +14,56 @@
         >
       </div>
     </mat-card-header>
-    <mat-card-content></mat-card-content>
+    <mat-card-content>
+      <p *ngIf="dev.bio">{{ dev.bio }}</p>
+      <mat-toolbar class="dev-repos">
+        <a [href]="dev.html_url + '?tab=repositories'" target="_blank">
+          <h4>Repos</h4>
+          <span
+            ><strong>{{ dev.public_repos }}</strong></span
+          >
+        </a>
+        <a [href]="dev.html_url + '?tab=followers'" target="_blank">
+          <h4>Followers</h4>
+          <span
+            ><strong>{{ dev.followers }}</strong></span
+          >
+        </a>
+        <a [href]="dev.html_url + '?tab=following'" target="_blank">
+          <h4>Following</h4>
+          <span
+            ><strong>{{ dev.following }}</strong></span
+          >
+        </a>
+      </mat-toolbar>
+      <div class="dev-personal-info">
+        <div>
+          <mat-icon>location_on</mat-icon>
+          <span *ngIf="dev.location; else notDefined">{{ dev.location }}</span>
+        </div>
+        <div>
+          <mat-icon>link</mat-icon>
+          <a
+            *ngIf="dev.blog; else notDefined"
+            [href]="dev.blog"
+            target="_blank"
+            >{{ dev.blog }}</a
+          >
+        </div>
+        <div>
+          <mat-icon>home_work</mat-icon>
+          <span *ngIf="dev.company; else notDefined">{{ dev.company }}</span>
+        </div>
+        <div>
+          <mat-icon>email</mat-icon>
+          <span *ngIf="dev.email; else notDefined">{{ dev.email }}</span>
+        </div>
+      </div>
+    </mat-card-content>
     <mat-card-footer></mat-card-footer>
   </mat-card>
 </ng-container>
+
+<ng-template #notDefined>
+  <span>Not Available</span>
+</ng-template>
