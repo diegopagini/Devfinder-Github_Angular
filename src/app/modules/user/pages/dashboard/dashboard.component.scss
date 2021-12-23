@@ -1,0 +1,11 @@
+@import "../../../../../assets/styles/mixins";
+
+.navigation {
+  bottom: 1rem;
+  margin: 0 auto;
+  max-width: 1440px;
+  position: fixed;
+  width: 100%;
+
+  @include center;
+}

@@ -1,15 +1,7 @@
 @import "../assets/styles/mixins";
 
-.app,
-.navigation {
+.app {
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
-}
-
-.navigation {
-  bottom: 1rem;
-  position: fixed;
-
-  @include center;
 }

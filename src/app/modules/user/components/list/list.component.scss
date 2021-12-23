@@ -7,9 +7,16 @@
     background-color: rgba(transparent, 0.1);
     margin: 2rem 1rem;
 
+    ::ng-deep .mat-list-item {
+      height: max-content;
+    }
+
     .option {
       align-items: center;
       display: flex;
+      flex-wrap: wrap;
+      min-height: max-content;
+      padding: 0.25rem 0;
       width: 100%;
 
       img {
@@ -22,6 +29,10 @@
       span,
       a {
         padding: 0 1rem;
+      }
+
+      button {
+        margin: 0 1rem 0 auto;
       }
     }
   }

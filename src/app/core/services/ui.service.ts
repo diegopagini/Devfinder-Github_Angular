@@ -18,8 +18,8 @@ export class UiService {
       : this.document.body.setAttribute('color-theme', 'dark');
   }
 
-  showNotification(user: User): void {
-    this.snackBar.open(`${user.name} added to list`, '', {
+  showNotification(message: string, user?: User): void {
+    this.snackBar.open(`${user ? user.name : ''} ${message}`, '', {
       duration: 2000,
       horizontalPosition: 'center',
       verticalPosition: 'top',

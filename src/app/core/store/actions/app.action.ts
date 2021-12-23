@@ -22,3 +22,8 @@ export const addDeveloperSuccess = createAction(
   '[Effect] Add Developer To List',
   props<{ payload: User }>()
 );
+
+export const removeDeveloper = createAction(
+  '[List] Remove developer',
+  props<{ payload: User }>()
+);

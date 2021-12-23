@@ -4,7 +4,7 @@ import { map, tap } from 'rxjs';
 import { CustomAction } from '../../models/actions.model';
 import { UiService } from '../../services/ui.service';
 import { changeTheme } from '../actions/ui.actions';
-import { addDeveloper } from '../actions/app.action';
+import { addDeveloper, removeDeveloper } from '../actions/app.action';
 
 @Injectable()
 export class UiEffects {
@@ -28,7 +28,21 @@ export class UiEffects {
         ofType(addDeveloper),
         map((action: CustomAction) => action),
         tap((action: CustomAction) =>
-          this.uiService.showNotification(action.payload)
+          this.uiService.showNotification('added to list.', action.payload)
+        )
+      ),
+    {
+      dispatch: false,
+    }
+  );
+
+  removeFromList$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(removeDeveloper),
+        map((action: CustomAction) => action),
+        tap((action: CustomAction) =>
+          this.uiService.showNotification('removed from list.', action.payload)
         )
       ),
     {

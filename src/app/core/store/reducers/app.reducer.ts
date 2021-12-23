@@ -1,12 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
 import { CustomAction } from '../../models/actions.model';
 import { AppInitialState } from '../../models/app.state.model';
+import { User } from '../../models/user.model';
 import {
   addDeveloper,
   addDeveloperSuccess,
   getSearch,
   getSearchFail,
   getSearchSuccess,
+  removeDeveloper,
 } from '../actions/app.action';
 
 const initialState: AppInitialState = {
@@ -50,5 +52,12 @@ export const appReducer = createReducer(
     ...state,
     user: null,
     adding: false,
+  })),
+
+  on(removeDeveloper, (state, action) => ({
+    ...state,
+    developers: [
+      ...state.developers.filter((el: User) => el.id !== action.payload.id),
+    ],
   }))
 );

@@ -5,3 +5,7 @@
 <section *ngIf="notFound$ | async" class="not-found fadeIn">
   <p>No developers with that name found...</p>
 </section>
+
+<section *ngIf="developers$ | async" class="navigation">
+  <app-navbar></app-navbar>
+</section>
