@@ -1,2 +1,3 @@
 <app-searchdev></app-searchdev>
-<app-data></app-data>
+<app-data *ngIf="!(loading$ | async)"></app-data>
+<app-spinner *ngIf="loading$ | async"></app-spinner>

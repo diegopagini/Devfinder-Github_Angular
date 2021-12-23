@@ -14,4 +14,11 @@ body[color-theme="light"] {
   * {
     color: $black;
   }
+
+  .loading {
+    .double-bounce1,
+    .double-bounce2 {
+      background-color: $black;
+    }
+  }
 }
