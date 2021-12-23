@@ -1,0 +1,11 @@
+<mat-list class="list" *ngIf="developers$ | async as developers">
+  <mat-list-item *ngFor="let developer of developers">
+    <div class="option">
+      <img [src]="developer.avatar_url" [alt]="developer.name" loading="lazy" />
+      <span>{{ developer.name }}</span>
+      <a [href]="developer.html_url" target="_blank"
+        >@{{ developer.html_url }}</a
+      >
+    </div>
+  </mat-list-item>
+</mat-list>

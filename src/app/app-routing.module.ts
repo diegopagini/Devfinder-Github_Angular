@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NavGuard } from './core/guards/nav.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () =>
       import('./modules/user/user.module').then((m) => m.UserModule),
+    canActivate: [NavGuard],
   },
   {
     path: '',
