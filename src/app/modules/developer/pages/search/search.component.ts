@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 import { loadingSelector } from 'src/app/core/store/selectors/app.selectors';
 
 @Component({
@@ -14,6 +14,6 @@ export class SearchComponent {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.loading$ = this.store.select(loadingSelector);
+    this.loading$ = this.store.select(loadingSelector).pipe(shareReplay());
   }
 }

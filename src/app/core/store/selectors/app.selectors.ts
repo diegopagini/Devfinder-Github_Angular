@@ -6,3 +6,8 @@ export const state = createFeatureSelector<AppInitialState>('app');
 export const loadingSelector = createSelector(state, (app) => app.loading);
 
 export const userSelector = createSelector(state, (app) => app.user);
+
+export const developersSelector = createSelector(
+  state,
+  (app) => app.developers
+);

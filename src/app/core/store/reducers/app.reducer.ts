@@ -10,6 +10,7 @@ import {
 const initialState: AppInitialState = {
   loading: false,
   user: null,
+  developers: null,
 };
 
 export const appReducer = createReducer(

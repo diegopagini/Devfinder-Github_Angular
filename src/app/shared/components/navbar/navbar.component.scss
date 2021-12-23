@@ -1,0 +1,9 @@
+:host {
+  width: 100%;
+  mat-toolbar {
+    align-items: center;
+    background-color: rgba(transparent, 0.05);
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

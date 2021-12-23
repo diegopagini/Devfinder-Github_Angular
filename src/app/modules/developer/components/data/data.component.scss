@@ -5,6 +5,14 @@
   background-color: rgba(transparent, 0.1);
   font-family: $font-family;
   margin: 2rem 0;
+  position: relative;
+
+  .save {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 
   mat-card-header {
     align-items: center;
